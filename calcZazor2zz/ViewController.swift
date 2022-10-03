@@ -8,8 +8,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    
     // Поле ввода измеренного зазора на впуске
     @IBOutlet weak var inZazor: UITextField!
     // Поле ввода толщины старой шайбы на впуске
@@ -24,10 +22,7 @@ class ViewController: UIViewController {
     // Полученый результат новой шайбы для утановки в ВЫпуск
     @IBOutlet weak var outNewShaibaLabel: UILabel!
 
-
     func calcInShaiba(inZazor:Double, inOldShaiba:Double) -> Double{
-       
-        
         let inNewShaiba = inOldShaiba + (inZazor - 0.13) * 1.5
         inNewShaibaLabel.text = "\(inNewShaiba)"
        
@@ -38,24 +33,14 @@ class ViewController: UIViewController {
         outNewShaibaLabel.text = "\(outNewShaiba)"
         return outNewShaiba
     }
-  
- 
     @IBAction func button1(_ sender: UIButton) {
         let inZazor = Double(inZazor.text!)
         let inOldShaiba = Double(inOldShaiba.text!)
         calcInShaiba(inZazor: inZazor!, inOldShaiba: inOldShaiba!)
     }
-     
     @IBAction func button2(_ sender: UIButton) {
         let outZazor = Double(outZazor.text!)
         let outOldShaiba = Double(outOldShaiba.text!)
         calcOutShaiba(outZazor: outZazor!, outOldShaiba: outOldShaiba!)
-    }
-    
-    
-    
-    
-    
-    
-    
+    } 
 }
